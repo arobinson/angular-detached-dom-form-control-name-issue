@@ -1,24 +1,51 @@
 {
-  // For more information, visit: https://go.microsoft.com/fwlink/?LinkId=733558
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
   "version": "2.0.0",
   "tasks": [
     {
       "type": "npm",
+      "script": "serve",
+      "path": ".",
+      "group": "build",
+      "problemMatcher": [],
+      "label": "Serve Angular application",
+      "detail": "Serves the Angular application"
+    },
+    {
+      "type": "npm",
+      "script": "lint.fix",
+      "path": ".",
+      "group": "build",
+      "problemMatcher": [],
+      "label": "lint fix Angular application",
+      "detail": "Runs ESLint with the --fix flag"
+    },
+    {
+      "type": "npm",
       "script": "start",
-      "isBackground": true,
+      "path": ".",
+      "group": "build",
       "problemMatcher": {
         "owner": "typescript",
+        "source": "ts",
+        "applyTo": "closedDocuments",
+        "fileLocation": [
+          "relative",
+          "${workspaceFolder}"
+        ],
         "pattern": "$tsc",
         "background": {
           "activeOnStart": true,
-          "beginsPattern": {
-            "regexp": "(.*?)"
-          },
-          "endsPattern": {
-            "regexp": "bundle generation complete"
-          }
+          "beginsPattern": "ng serve",
+          "endsPattern": "http://localhost:4200"
         }
-      }
+      },
+      "label": "Start Angular application",
+      "detail": "Serve the Angular application",
+      "isBackground": true,
     }
+   ],
+  "inputs": [
   ]
 }

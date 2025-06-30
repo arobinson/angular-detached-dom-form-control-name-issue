@@ -1,0 +1,63 @@
+{
+  "files.trimTrailingWhitespace": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features",
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    }
+  },
+  "[html]": {
+    "editor.defaultFormatter": "Angular.ng-template",
+    "editor.formatOnSave": true
+  },
+  "npm.packageManager": "pnpm",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    }
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[python]": {
+    "diffEditor.ignoreTrimWhitespace": false,
+    "gitlens.codeLens.symbolScopes": ["!Module"],
+    "editor.wordBasedSuggestions": "allDocuments",
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "files.associations": {
+    "tslint.json": "jsonc"
+  },
+  "search.exclude": {
+    "**/.git": true,
+    "**/node_modules": true,
+    "**/*.min.js*": true
+  },
+  "eslint.workingDirectories": [
+    "."
+  ],
+  "eslint.execArgv": ["--max_old_space_size=4096"],
+  "eslint.lintTask.options": "--ext .ts .",
+  "editor.bracketPairColorization.enabled": true,
+  "javascript.preferences.importModuleSpecifier": "project-relative",
+  "typescript.preferences.importModuleSpecifier": "project-relative",
+  "cSpell.spellCheckOnlyWorkspaceFiles": true,
+  "cSpell.allowCompoundWords": true,
+  "pylint.args": ["--max-line-length=140"],
+  "[javascript][typescript]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    }
+  },
+  "cSpell.ignorePaths": [
+    "node_modules",
+    ".git/objects",
+    ".vscode",
+    ".vscode-insiders"
+  ]
+}

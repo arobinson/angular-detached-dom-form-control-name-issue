@@ -1,0 +1,46 @@
+<div>
+  <h1>First form group</h1>
+  <p>
+    No detached DOM in this case, the destruction of the form group allows the
+    DOM not to be detached/leaked
+  </p>
+  @if (showForm()) {
+    @let fg = formGroup();
+    @if (fg) {
+      <form [formGroup]="fg" class="first-form">
+        <label>
+          Name:
+          <input type="text" formControlName="name" />
+        </label>
+        <label>
+          Age:
+          <input type="number" formControlName="age" />
+        </label>
+      </form>
+    }
+  }
+  <button (click)="showForm.set(!showForm())">Toggle Form</button>
+</div>
+<div>
+  <h1>Second form group</h1>
+  <p>
+    Detached DOM in this case, the retaining of the form group causes the DOM to
+    be detached/leaked
+  </p>
+  @if (showForm2()) {
+    @let fg2 = secondFormGroup();
+    @if (fg2) {
+      <form [formGroup]="fg2" class="second-form">
+        <label>
+          Name:
+          <input type="text" formControlName="name" />
+        </label>
+        <label>
+          Age:
+          <input type="number" formControlName="age" />
+        </label>
+      </form>
+    }
+  }
+  <button (click)="showForm2.set(!showForm2())">Toggle Form 2</button>
+</div>

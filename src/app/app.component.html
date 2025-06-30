@@ -1,0 +1,29 @@
+<h1>Issue with formControlName and detached DOM elements</h1>
+@if (showComponent()) {
+  <issue-with-form />
+} @else {
+  <p>Component was not created</p>
+}
+
+<button (click)="showComponent.set(!showComponent())">
+  Toggle top level component
+</button>
+
+<p>To reproduce:</p>
+<ol>
+  <li>Reproduce the issue:</li>
+  <ol>
+    <li>Click the "Toggle Form" button for the form group</li>
+    <li>Click it again to hide the form</li>
+    <li>Repeat the steps above for the second form group</li>
+    <li>Take a memory snapshot in the developer tools</li>
+    <li>Check for "Detached &lt;form&gt;" elements in the memory snapshot</li>
+    <li>You will see two detached form elements</li>
+  </ol>
+  <li>Now cause the issue to be fixed:</li>
+  <ol>
+    <li>Click the "Toggle top level component" button</li>
+    <li>Take another memory snapshot</li>
+    <li>You will see that the detached form elements are no longer there</li>
+  </ol>
+</ol>
