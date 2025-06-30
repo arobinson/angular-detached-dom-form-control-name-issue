@@ -2,58 +2,20 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.4.
 
-## Development server
+Reproduction for [Angular Issue 62388](https://github.com/angular/angular/issues/62388)
 
-To start a local development server, run:
+## To reproduce:
 
-```bash
-ng serve
+In a shell (assuming pnpm and VS code command line tool)
+```zsh
+git clone git@github.com:arobinson/angular-detached-dom-form-control-name-issue.git
+cd angular-detached-dom-form-control-name-issue
+pnpm install
+code .
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Then in VS code (or Cursor), open the launch/debug tools and run the `Launch Chrome against localhost`
+(this will start the server and launch the browser).
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Follow the steps in the HTML to reproduce the issue.
+Notice that destroying the entire component will fix the leak.
